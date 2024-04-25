@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Notices from './furniture/Notices';
+import HeartIcon from './furniture/HeartIcon';
 // import StarIcon from '@mui/icons-material/Star';
 
 
@@ -8,8 +9,10 @@ import Notices from './furniture/Notices';
 function App() {
   return (
     <>
-      <Notices/>
+      {/* <Notices/> */}
       {/* < StarIcon /> */}
+      <HeartIcon />
+
     </>
   );
 }
