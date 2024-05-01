@@ -13,6 +13,7 @@ import QuestionList from './furniture/QuestionForm';
 import ProductList from './furniture/QuestionForm';
 import Board from './furniture/Board';
 import HeartButton from './furniture/HeartButton';
+import NonMemberOrder from './furniture/NonMemberOrder';
 
 
 
@@ -35,9 +36,12 @@ function App() {
       {/* <MyListComponent /> */}
       {/* <InquiryList /> */}
       {/* <BoardList /> */}
-      < Board />
-        {/* <HeartButton />       */}
-      {/* <InquiryButton /> */}
+      {/* < Board /> */}
+      {/* <HeartButton />*/}
+      <NonMemberOrder />
+   
+      
+   
     </>
     </>
   );

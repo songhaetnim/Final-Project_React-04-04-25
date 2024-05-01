@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useDemoData } from '@mui/x-data-grid-generator';
 
+function CustomPagination() {
+  return (
+    <div>
+      <span>{"<"}</span>
+      <span>1</span>
+      <span>{">"}</span>
+    </div>
+  );
+}
+
 function Board() {
   const [inquiries, setInquiries] = useState([]);
   const [newInquiry, setNewInquiry] = useState({ name: '', email: '', title: '', date: '' });
@@ -20,7 +30,7 @@ function Board() {
   // 가짜 데이터 생성 함수
   const generateFakeData = () => {
     const fakeData = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       fakeData.push({
         id: i,
         name: `유형 ${i}`,
@@ -48,12 +58,32 @@ function Board() {
         <DataGrid
           rows={mergedData}
           columns={[
-            { field: 'name', headerName: '상세정보', width: 300 },
-            { field: 'email', headerName: '구매상품안내', width: 300 },
-            { field: 'title', headerName: '후기', width: 300 },
-            { field: 'date', headerName: '문의하기', width: 300 },
+            {
+              field: 'name',
+              headerName: '상세정보',
+              width: 300,
+            },
+            {
+              field: 'email',
+              headerName: '구매상품안내',
+              width: 300,
+            },
+            {
+              field: 'title',
+              headerName: '후기',
+              width: 300,
+            },
+            {
+              field: 'date',
+              headerName: '문의하기',
+              width: 300,
+            },
           ]}
-          pageSize={5} // 페이지당 행의 수 설정
+          pagination
+          pageSize={5}
+          rowsPerPageOptions={[]} // 빈 배열로 설정하여 페이지당 항목 수 옵션을 제거합니다.
+          rowHeight={50} // 간격 조정을 위해 행의 높이를 설정합니다.
+          style={{marginTop:'50px'}}
           localeText={{
             toolbarDensity: 'Size',
             toolbarDensityLabel: 'Size',
@@ -63,6 +93,7 @@ function Board() {
           }}
           components={{
             Toolbar: GridToolbar,
+            Pagination: CustomPagination,
           }}
         />
       </div>
