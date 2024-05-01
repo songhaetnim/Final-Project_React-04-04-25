@@ -7,12 +7,13 @@ const NonMemberOrder = () => {
   const [phone, setPhone] = useState('');
   const [postalcode, setPostalcode] = useState('');
   const [orderItems, setOrderItems] = useState('');
-  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
+  const [customMessage, setCustomMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // 여기에서는 간단히 콘솔에 출력하도록 하겠습니다.
-    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message: ${message}`);
+    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message Type: ${messageType}, Custom Message: ${customMessage}`);
     // 나중에 서버로 전송하거나 다른 작업을 수행할 수 있습니다.
   };
 
@@ -21,6 +22,14 @@ const NonMemberOrder = () => {
     // 이 부분은 실제 API와 연동하여 구현해야 합니다.
     // 여기에는 실제 API 호출 코드가 들어가야 합니다.
     // 결과를 setAddress 함수를 통해 주소 입력란에 적용할 수 있습니다.
+  };
+
+  const handleMessageChange = (e) => {
+    const selectedMessageType = e.target.value;
+    setMessageType(selectedMessageType);
+    if (selectedMessageType !== '직접 입력') {
+      setCustomMessage('');
+    }
   };
 
   return (
@@ -59,7 +68,7 @@ const NonMemberOrder = () => {
             <tr>
               <td><label htmlFor="message">추가 메시지:</label></td>
               <td>
-                <select id="message" value={message} onChange={(e) => setMessage(e.target.value)}>
+                <select id="message" value={messageType} onChange={handleMessageChange}>
                   <option value="">-- 선택하세요 --</option>
                   <option value="배송 전 연락바랍니다.">배송 전 연락바랍니다.</option>
                   <option value="경비실에 맡겨주세요.">경비실에 맡겨주세요.</option>
@@ -70,6 +79,9 @@ const NonMemberOrder = () => {
                   <option value="부재시 집 앞에 놔주세요.">부재시 집 앞에 놔주세요.</option>
                   <option value="직접 입력">직접 입력</option>
                 </select>
+                {messageType === '직접 입력' && (
+                  <textarea value={customMessage} onChange={(e) => setCustomMessage(e.target.value)} style={{ marginTop: '5px', width: '100%' }} placeholder="직접 입력해주세요" />
+                )}
               </td>
             </tr>
           </tbody>
