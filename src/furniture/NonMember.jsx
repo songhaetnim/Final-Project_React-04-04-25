@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const NonMemberOrder = () => {
+const NonMember = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
@@ -10,7 +10,6 @@ const NonMemberOrder = () => {
   const [messageType, setMessageType] = useState('');
   const [customMessage, setCustomMessage] = useState('');
   const [detailAddress, setDetailAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
 
   useEffect(() => {
     // Daum 우편번호 서비스 스크립트를 동적으로 추가합니다.
@@ -54,9 +53,21 @@ const NonMemberOrder = () => {
     }
   };
 
+  const handlePhoneChange = (event) => {
+    let input = event.target.value;
+    // 숫자 이외의 문자 제거
+    input = input.replace(/[^0-9]/g, '');
+    // 하이픈(-) 추가
+    input = input.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+    // 13자리 이상 입력 방지
+    if (input.length <= 13) {
+      setPhone(input);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message Type: ${messageType}, Custom Message: ${customMessage}, Detail Address: ${detailAddress}, Payment Method: ${paymentMethod}`);
+    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message Type: ${messageType}, Custom Message: ${customMessage}, Detail Address: ${detailAddress}`);
   };
 
   const handleMessageChange = (e) => {
@@ -65,11 +76,6 @@ const NonMemberOrder = () => {
     if (selectedMessageType !== '직접 입력') {
       setCustomMessage('');
     }
-  };
-
-  const handlePaymentChange = (e) => {
-    const selectedPaymentMethod = e.target.value;
-    setPaymentMethod(selectedPaymentMethod);
   };
 
   return (
@@ -84,7 +90,7 @@ const NonMemberOrder = () => {
             </tr>
             <tr>
               <td><label htmlFor="phone">휴대폰:</label></td>
-              <td><input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required /></td>
+              <td><input type="text" id="phone" value={phone} onChange={handlePhoneChange} required /></td>
             </tr>
             <tr>
               <td><label htmlFor="email">이메일:</label></td>
@@ -129,18 +135,6 @@ const NonMemberOrder = () => {
                 )}
               </td>
             </tr>
-            <tr>
-              <td><label htmlFor="payment">결제 방법:</label></td>
-              <td>
-                <select id="payment" value={paymentMethod} onChange={handlePaymentChange}>
-                  <option value="">-- 선택하세요 --</option>
-                  <option value="신용카드">신용카드</option>
-                  <option value="무통장 입금">무통장 입금</option>
-                  <option value="kakaoPay">kakaoPay</option>
-                  {/* 다른 결제 방법도 추가 가능 */}
-                </select>
-              </td>
-            </tr>
           </tbody>
         </table>
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
@@ -152,4 +146,4 @@ const NonMemberOrder = () => {
   );
 };
 
-export default NonMemberOrder;
+export default NonMember;
