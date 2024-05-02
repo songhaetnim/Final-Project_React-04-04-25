@@ -11,6 +11,8 @@ const NonMemberOrder = () => {
   const [customMessage, setCustomMessage] = useState('');
   const [detailAddress, setDetailAddress] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
+  const [bank, setBank] = useState('');
+  const [accountNumber, setAccountNumber] = useState('');
 
   useEffect(() => {
     // Daum 우편번호 서비스 스크립트를 동적으로 추가합니다.
@@ -56,7 +58,7 @@ const NonMemberOrder = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message Type: ${messageType}, Custom Message: ${customMessage}, Detail Address: ${detailAddress}, Payment Method: ${paymentMethod}`);
+    console.log(`Name: ${name}, Email: ${email}, Address: ${address}, Phone: ${phone}, Postal Code: ${postalcode}, Order Items: ${orderItems}, Message Type: ${messageType}, Custom Message: ${customMessage}, Detail Address: ${detailAddress}, Payment Method: ${paymentMethod}, Bank: ${bank}, Account Number: ${accountNumber}`);
   };
 
   const handleMessageChange = (e) => {
@@ -135,18 +137,40 @@ const NonMemberOrder = () => {
                 <select id="payment" value={paymentMethod} onChange={handlePaymentChange}>
                   <option value="">-- 선택하세요 --</option>
                   <option value="신용카드">신용카드</option>
+                  <option value="계좌이체">계좌이체</option>
                   <option value="무통장 입금">무통장 입금</option>
                   <option value="kakaoPay">kakaoPay</option>
                   {/* 다른 결제 방법도 추가 가능 */}
                 </select>
               </td>
             </tr>
+            <tr>
+              <td><label htmlFor="bank">은행:</label></td>
+              <td>
+                <select id="bank" value={bank} onChange={(e) => setBank(e.target.value)}>
+                  <option value="">-- 선택하세요 --</option>
+                  <option value="국민은행">국민은행</option>
+                  <option value="신한은행">신한은행</option>
+                  <option value="우리은행">우리은행</option>
+                  <option value="우리은행">하나은행</option>
+                  <option value="우리은행">기업은행</option>
+                  <option value="우리은행">카카오뱅크</option>
+                  {/* <option value="우리은행">kbank</option> */}
+                  {/* 다른 은행도 추가 가능 */}
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label htmlFor="accountNumber">환불받을 계좌번호:</label></td>
+              <td><input type="text" id="accountNumber" value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} required /></td>
+            </tr>
           </tbody>
         </table>
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <button style={{ marginRight: '10px' }} type="button" onClick={() => window.history.back()}>취소</button>
-          <button type="submit">주문 완료</button>
+        <div style={{ textAlign: 'center', marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button type="submit">주문 완료</button>
+            <button style={{ marginLeft: '10px' }} type="button" onClick={() => window.history.back()}>취소</button>
         </div>
+
       </form>
     </div>
   );
