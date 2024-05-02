@@ -14,6 +14,8 @@ import ProductList from './furniture/QuestionForm';
 import Board from './furniture/Board';
 import HeartButton from './furniture/HeartButton';
 import NonMemberOrder from './furniture/NonMemberOrder';
+import AddressForm, { Submit } from './furniture/AddressForm';
+
 
 
 
@@ -38,7 +40,8 @@ function App() {
       {/* <BoardList /> */}
       {/* < Board /> */}
       {/* <HeartButton />*/}
-      <NonMemberOrder />
+      {/* <NonMemberOrder /> */}
+      <AddressForm />
    
       
    
