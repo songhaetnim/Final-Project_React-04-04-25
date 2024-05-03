@@ -13,7 +13,6 @@ const NonMemberOrder = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
   const [bank, setBank] = useState('');
   const [accountNumber, setAccountNumber] = useState('');
-  const [isPhoneNumberValid, setIsPhoneNumberValid] = useState(true); // 휴대폰 번호 유효성 검사 상태
 
   useEffect(() => {
     // Daum 우편번호 서비스 스크립트를 동적으로 추가합니다.
@@ -75,23 +74,9 @@ const NonMemberOrder = () => {
     setPaymentMethod(selectedPaymentMethod);
   };
 
-  const handlePhoneChange = (e) => {
-    const phoneNumber = e.target.value;
-    // 번호 입력 시 '-'를 제외한 문자열만 사용하도록 정규식을 이용하여 처리합니다.
-    const formattedPhoneNumber = phoneNumber.replace(/[^0-9]/g, '');
-    // 11자리 이상의 번호는 처리하지 않습니다.
-    if (formattedPhoneNumber.length <= 11) {
-      // 번호를 하이픈(-)으로 나누어 표시합니다.
-      const formatted = formattedPhoneNumber.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
-      setPhone(formatted);
-    }
-    // 휴대폰 번호의 길이가 13자 이상이면 유효하지 않은 것으로 처리
-    setIsPhoneNumberValid(formattedPhoneNumber.length <= 11);
-  };
-
   return (
     <div className="order-container">
-      <h2 style={{ textAlign: 'center' }}>비회원 주문하기</h2>
+      <h2 style={{ textAlign: 'center' }}>정회원 주문하기</h2>
       <form onSubmit={handleSubmit}>
         <table style={{ margin: 'auto' }}>
           <tbody>
@@ -101,13 +86,8 @@ const NonMemberOrder = () => {
             </tr>
             <tr>
               <td><label htmlFor="phone">휴대폰:</label></td>
-              <td><input type="tel" id="phone" value={phone} onChange={handlePhoneChange} required /></td>
+              <td><input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required /></td>
             </tr>
-            {!isPhoneNumberValid && (
-              <tr>
-                <td colSpan="2" style={{ color: 'red' }}>휴대폰 번호는 13자리를 넘을 수 없습니다.</td>
-              </tr>
-            )}
             <tr>
               <td><label htmlFor="email">이메일:</label></td>
               <td><input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required /></td>
@@ -172,9 +152,10 @@ const NonMemberOrder = () => {
                   <option value="국민은행">국민은행</option>
                   <option value="신한은행">신한은행</option>
                   <option value="우리은행">우리은행</option>
-                  <option value="하나은행">하나은행</option>
-                  <option value="기업은행">기업은행</option>
-                  <option value="카카오뱅크">카카오뱅크</option>
+                  <option value="우리은행">하나은행</option>
+                  <option value="우리은행">기업은행</option>
+                  <option value="우리은행">카카오뱅크</option>
+                  {/* <option value="우리은행">kbank</option> */}
                   {/* 다른 은행도 추가 가능 */}
                 </select>
               </td>
@@ -185,11 +166,11 @@ const NonMemberOrder = () => {
             </tr>
           </tbody>
         </table>
-
         <div style={{ textAlign: 'center', marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <button type="submit">주문 완료</button>
-          <button style={{ marginLeft: '10px' }} type="button" onClick={() => window.history.back()}>취소</button>
+            <button type="submit">주문 완료</button>
+            <button style={{ marginLeft: '10px' }} type="button" onClick={() => window.history.back()}>취소</button>
         </div>
+
       </form>
     </div>
   );

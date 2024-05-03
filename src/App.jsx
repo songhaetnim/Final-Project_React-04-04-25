@@ -14,9 +14,15 @@ import ProductList from './furniture/QuestionForm';
 import Board from './furniture/Board';
 import HeartButton from './furniture/HeartButton';
 import AddressForm, { Submit } from './furniture/AddressForm';
-// import OrderForm from './furniture/Order';
-// import NonMember from './furniture/NonMember';
+import OrderForm from './furniture/NonMemberOrder';
+import NonMember from './furniture/NonMember';
 import NonMemberOrder from './furniture/NonMemberOrder';
+import Click from './furniture/Click';
+import Rder from './furniture/Rder';
+
+
+
+
 
 
 
@@ -47,7 +53,9 @@ function App() {
       {/* <AddressForm /> */}
       {/* <OrderForm /> */}
       {/* <NonMember /> */}
-     
+      {/* <Click /> */}
+      {/* <Rder /> */}
+
     </>
     </>
   );
