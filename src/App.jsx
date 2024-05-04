@@ -19,6 +19,7 @@ import NonMember from './furniture/NonMember';
 import NonMemberOrder from './furniture/NonMemberOrder';
 import Click from './furniture/Click';
 import Rder from './furniture/Rder';
+import Banner from './furniture/Banner';
 
 
 
@@ -49,13 +50,13 @@ function App() {
       {/* <BoardList /> */}
       {/* < Board /> */}
       {/* <HeartButton />*/}
-       <NonMemberOrder />
+       {/* <NonMemberOrder /> */}
       {/* <AddressForm /> */}
       {/* <OrderForm /> */}
       {/* <NonMember /> */}
       {/* <Click /> */}
       {/* <Rder /> */}
-
+      {/* <Banner /> */}
     </>
     </>
   );
