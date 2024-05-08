@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { Routes, Route, Form } from 'react-router-dom';
 import QuestionDone from './furniture/QuestionDone'; // 중괄호 제거
 // import InquiryButton from './furniture/InquiryButton';
@@ -19,11 +19,6 @@ import NonMember from './furniture/NonMember';
 import NonMemberOrder from './furniture/NonMemberOrder';
 import Click from './furniture/Click';
 import Rder from './furniture/Rder';
-
-
-
-
-
 
 
 
@@ -57,10 +52,17 @@ function App() {
       {/* <NonMember /> */}
       {/* <Click /> */}
       {/* <Rder /> */}
-     
+    
     </>
     </>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
