@@ -19,10 +19,8 @@ import NonMember from './furniture/NonMember';
 import NonMemberOrder from './furniture/NonMemberOrder';
 import Click from './furniture/Click';
 import Rder from './furniture/Rder';
-
-
-
-
+import MyApp from './furniture/MyApp';
+import DeliveryTracker from './furniture/DeliveryTracker';
 
 
 
@@ -45,20 +43,26 @@ function App() {
       {/* <InquiryList /> */}
       {/* <BoardList /> */}
       {/* < Board /> */}
-      {/* <HeartButton />*/}
+      {/* <HeartButton /> */}
        {/* <NonMemberOrder /> */}
       {/* <AddressForm /> */}
       {/* <OrderForm /> */}
       {/* <NonMember /> */}
       {/* <Click /> */}
       {/* <Rder /> */}
-    
+      {/* <MyApp /> */}
+      <DeliveryTracker />
+      
     </>
     </>
   );
 }
 
 export default App;
+
+
+
+
 
 
 
