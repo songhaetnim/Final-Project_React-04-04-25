@@ -26,7 +26,7 @@ function DeliveryTracker() {
       <form onSubmit={handleSubmit} action="http://info.sweettracker.co.kr/tracking/5" method="post">
         <div className="form-group">
           {/* api키 */}
-          <input type="text" className="form-control" name="t_key" value={''}/> {/* <= 올리기전에 지울것}*/}
+          <input type="text" className="form-control" name="t_key" value={'PpYRP0pnrDdGfUEA1Hz28w'}/> {/* <= 올리기전에 지울것}*/}
         </div>
         <div className="form-group">
           {/* 택배사 */}

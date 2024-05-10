@@ -21,6 +21,7 @@ import Click from './furniture/Click';
 import Rder from './furniture/Rder';
 import MyApp from './furniture/MyApp';
 import DeliveryTracker from './furniture/DeliveryTracker';
+import MyComponent from './furniture/MyComponent';
 
 
 
@@ -52,6 +53,7 @@ function App() {
       {/* <Rder /> */}
       {/* <MyApp /> */}
       <DeliveryTracker />
+      {/* <MyComponent /> */}
       
     </>
     </>
