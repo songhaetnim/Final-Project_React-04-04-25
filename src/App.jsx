@@ -22,6 +22,7 @@ import Rder from './furniture/Rder';
 import MyApp from './furniture/MyApp';
 import DeliveryTracker from './furniture/DeliveryTracker';
 import MyComponent from './furniture/MyComponent';
+import ThreeScene from './furniture/ThreeScene';
 
 
 
@@ -52,9 +53,9 @@ function App() {
       {/* <Click /> */}
       {/* <Rder /> */}
       {/* <MyApp /> */}
-      <DeliveryTracker />
+      {/* <DeliveryTracker /> */}
       {/* <MyComponent /> */}
-      
+      {/* <ThreeScene /> */}
     </>
     </>
   );
