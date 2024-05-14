@@ -23,6 +23,7 @@ import MyApp from './furniture/MyApp';
 import DeliveryTracker from './furniture/DeliveryTracker';
 import MyComponent from './furniture/MyComponent';
 import ThreeScene from './furniture/ThreeScene';
+import MainPage from './furniture/MainPage';
 
 
 
@@ -56,6 +57,7 @@ function App() {
       {/* <DeliveryTracker /> */}
       {/* <MyComponent /> */}
       {/* <ThreeScene /> */}
+      <MainPage />
     </>
     </>
   );
