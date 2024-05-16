@@ -23,7 +23,9 @@ import MyApp from './furniture/MyApp';
 import DeliveryTracker from './furniture/DeliveryTracker';
 import MyComponent from './furniture/MyComponent';
 import ThreeScene from './furniture/ThreeScene';
-import MainPage from './furniture/MainPage';
+import DeveloperPage from './furniture/DeveloperPage';
+
+
 
 
 
@@ -47,7 +49,7 @@ function App() {
       {/* <BoardList /> */}
       {/* < Board /> */}
       {/* <HeartButton /> */}
-       {/* <NonMemberOrder /> */}
+      {/* <NonMemberOrder /> */}
       {/* <AddressForm /> */}
       {/* <OrderForm /> */}
       {/* <NonMember /> */}
@@ -57,7 +59,7 @@ function App() {
       {/* <DeliveryTracker /> */}
       {/* <MyComponent /> */}
       {/* <ThreeScene /> */}
-      <MainPage />
+      <DeveloperPage />
     </>
     </>
   );
