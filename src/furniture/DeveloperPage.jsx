@@ -63,7 +63,7 @@ const App = () => {
   const circles = [
     { id: 1, name: '이강성 :', description: '나는 오늘 힘들었다', imgUrl: circle1Image },
     { id: 2, name: '송햇님 :', description: '나는 집에 가고싶다.', imgUrl: circle2Image },
-    { id: 3, name: '정아름 :', description: 'This is the description for Circle ', imgUrl: circle3Image },
+    { id: 3, name: '정아름 :', description: '지구 망해라 ', imgUrl: circle3Image },
     { id: 4, name: '박성민 :', description: 'This is the description for Circle ', imgUrl: circle4Image },
     { id: 5, name: '홍시표 :', description: 'This is the description for Circle ', imgUrl: circle5Image },
     { id: 6, name: '김용현 :', description: 'This is the description for Circle ', imgUrl: circle6Image },
