@@ -49,7 +49,7 @@ function App() {
       {/* <BoardList /> */}
       {/* < Board /> */}
       {/* <HeartButton /> */}
-      {/* <NonMemberOrder /> */}
+      <NonMemberOrder />
       {/* <AddressForm /> */}
       {/* <OrderForm /> */}
       {/* <NonMember /> */}
@@ -59,7 +59,7 @@ function App() {
       {/* <DeliveryTracker /> */}
       {/* <MyComponent /> */}
       {/* <ThreeScene /> */}
-      <DeveloperPage />
+      {/* <DeveloperPage /> */}
     </>
     </>
   );

@@ -74,4 +74,7 @@ function ProductInquiryList() {
   );
 }
 
+
+
+
 export default ProductInquiryList;
