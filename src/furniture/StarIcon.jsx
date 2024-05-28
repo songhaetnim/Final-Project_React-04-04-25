@@ -1,3 +1,76 @@
+import React, { useState } from 'react';
+import StarIcon from '@mui/icons-material/Star';
+
+const StarRating = () => {
+  const [rating, setRating] = useState(0);
+
+  const handleClick = (index) => {
+    setRating((index + 1) / 10);
+  };
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      {[...Array(5)].map((_, starIndex) => {
+        const fullStars = Math.floor(rating);
+        const partialStar = rating - fullStars;
+        return (
+          <div style={{ position: 'relative', display: 'inline-block' }} key={starIndex}>
+            <StarIcon
+              style={{
+                cursor: 'pointer',
+                color: starIndex < fullStars ? 'gold' : 'grey',
+                fontSize: '2rem',
+                position: 'relative',
+                zIndex: 1,
+              }}
+            />
+            {starIndex === fullStars && partialStar > 0 && (
+              <StarIcon
+                style={{
+                  color: 'gold',
+                  fontSize: '2rem',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  clipPath: `inset(0 ${100 - partialStar * 100}% 0 0)`,
+                  zIndex: 2,
+                }}
+              />
+            )}
+            {[...Array(10)].map((_, partIndex) => (
+              <div
+                key={partIndex}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: `${partIndex * 10}%`,
+                  width: '10%',
+                  height: '100%',
+                  cursor: 'pointer',
+                  zIndex: 3,
+                }}
+                onClick={() => handleClick(starIndex * 10 + partIndex)}
+              />
+            ))}
+          </div>
+        );
+      })}
+      <p style={{ marginLeft: '10px' }}>별점: {rating.toFixed(1)}</p>
+    </div>
+  );
+};
+
+export default StarRating;
+
+
+
+
+
+
+
+
+
+
 // import React, { useState } from 'react';
 // import StarIcon from '@mui/icons-material/Star';
 

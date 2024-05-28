@@ -22,6 +22,8 @@ import MyComponent from './furniture/MyComponent';
 import ThreeScene from './furniture/ThreeScene';
 import DeveloperPage from './furniture/DeveloperPage';
 import HeartIcon from './furniture/HeartIcon';
+import StarRating from './furniture/StarIcon';
+
 
 
 function App() {
@@ -88,8 +90,10 @@ function App() {
       {/* <ThreeScene /> */}
       
      {/* 개발자페이지 */}
-     <DeveloperPage />
-      
+     {/* <DeveloperPage /> */}
+
+     {/* 스케줄러 */}
+     <StarRating />
     
      
     </>
