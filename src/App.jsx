@@ -23,6 +23,8 @@ import ThreeScene from './furniture/ThreeScene';
 import DeveloperPage from './furniture/DeveloperPage';
 import HeartIcon from './furniture/HeartIcon';
 import StarRating from './furniture/StarIcon';
+import ShoppingIcon from './furniture/ShoppingIcon';
+import Calendar from './furniture/Calendar';
 
 
 
@@ -92,9 +94,13 @@ function App() {
      {/* 개발자페이지 */}
      {/* <DeveloperPage /> */}
 
-     {/* 스케줄러 */}
-     <StarRating />
+     {/* 별점 소수점으로 오름 */}
+     {/* <StarRating /> */}
     
+    {/* 카트 아이콘 */}
+    {/* <ShoppingIcon /> */}
+
+    <Calendar />
      
     </>
     </>
