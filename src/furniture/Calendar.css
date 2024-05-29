@@ -62,7 +62,7 @@ td {
 }
 /* 달력 일자 셀 스타일 */
 .calendar-day {
-  cursor: pointer;  /* 커서 모양 변경 */
+  cursor: default;  /* 커서 모양 기본으로 변경 */
   position: relative; /* 자식 요소 절대 위치 설정 */
 }
 /* 달력 일자 텍스트 스타일 */

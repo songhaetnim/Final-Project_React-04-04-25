@@ -25,6 +25,8 @@ import HeartIcon from './furniture/HeartIcon';
 import StarRating from './furniture/StarIcon';
 import ShoppingIcon from './furniture/ShoppingIcon';
 import Calendar from './furniture/Calendar';
+import CalendarButton from './furniture/CalendarButton';
+import CalendarButtonApp from './furniture/CalendarButton';
 
 
 
@@ -99,9 +101,13 @@ function App() {
     
     {/* 카트 아이콘 */}
     {/* <ShoppingIcon /> */}
+    
+    {/* 캘린더(달력) */}
+    {/* <Calendar /> */}
 
-    <Calendar />
-     
+    {/* 캘린더보기버튼 */}
+    {/* <CalendarButtonApp /> */}
+     <CalendarButton />
     </>
     </>
   );
