@@ -17,10 +17,13 @@ const CalendarButton = ({ goOrderListView }) => {
       data-log-body='{"btn_name":"캘린더보기"}' // 로그에 기록될 정보
     >
       {/*  BiCalendar 아이콘 */}
-      < BiCalendar style={{ marginRight: '3px', fontSize: '18px', color: '#888' }} />
+      < BiCalendar style={{ marginRight: '3px', fontSize: '18px', color: '#888', textAlign:'end' }} />
+
       {/* 캘린더보기 텍스트 */}
-      <span style={{ fontSize: '14px' }}>캘린더보기</span>
+      <span style={{ fontSize: '14px' }}>캘린더보기  </span>
+       
     </a>
+      
   );
 };
 

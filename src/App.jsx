@@ -26,7 +26,7 @@ import StarRating from './furniture/StarIcon';
 import ShoppingIcon from './furniture/ShoppingIcon';
 import Calendar from './furniture/Calendar';
 import CalendarButton from './furniture/CalendarButton';
-import CalendarButtonApp from './furniture/CalendarButton';
+import CalendarButtonin from './furniture/Calendarin';
 
 
 
@@ -106,8 +106,9 @@ function App() {
     {/* <Calendar /> */}
 
     {/* 캘린더보기버튼 */}
-    {/* <CalendarButtonApp /> */}
-     <CalendarButton />
+    <CalendarButton />
+
+    <CalendarButtonin />
     </>
     </>
   );
