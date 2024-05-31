@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const NonMemberOrder = () => {
+const NonMemberOrder = () => {           // 각 입력 필드의 상태를 관리하기 위한 useState 훅
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
@@ -28,15 +28,15 @@ const NonMemberOrder = () => {
     };
   }, []);
 
-  const openPostcodePopup = () => {
+  const openPostcodePopup = () => {     // Daum 우편번호 팝업을 여는 openPostcodePopup 함수
     // Daum 우편번호 서비스 객체가 로드된 후 실행되도록 합니다.
     if (window.daum && window.daum.Postcode) {
       new window.daum.Postcode({
         oncomplete: function(data) {
-          let fullAddress = data.address;
+          let fullAddress = data.address;  // 기본 주소
           let extraAddress = '';
 
-          if (data.addressType === 'R') {
+          if (data.addressType === 'R') {  // 도로명 주소의 경우 추가적인 주소 정보가 있을 수 있음
             if (data.bname !== '') {
               extraAddress += data.bname;
             }
@@ -143,7 +143,7 @@ const NonMemberOrder = () => {
                   <option value="부재시 핸드폰으로 연락주세요.">부재시 핸드폰으로 연락주세요.</option>
                   <option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
                   <option value="부재시 집 앞에 놔주세요.">부재시 집 앞에 놔주세요.</option>
-                  <option value="부재시 집 앞에 놔주세요.">파손위험이 있는 상품이니 조심히 다뤄주세요.</option>
+                  <option value="파손위험이 있는 상품이니 조심히 다뤄주세요.">파손위험이 있는 상품이니 조심히 다뤄주세요.</option>
                   <option value="직접 입력">직접 입력</option>
                 </select>
                 {messageType === '직접 입력' && (
