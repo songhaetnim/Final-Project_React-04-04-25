@@ -121,13 +121,10 @@ const NonMember = () => {
                 <select id="message" value={messageType} onChange={handleMessageChange}>
                   <option value="">-- 선택하세요 --</option>
                   <option value="배송 전 연락바랍니다.">배송 전 연락바랍니다.</option>
-                  <option value="경비실에 맡겨주세요.">경비실에 맡겨주세요.</option>
-                  <option value="집앞에 놔주세요.">집앞에 놔주세요.</option>
-                  <option value="택배함에 놔주세요.">택배함에 놔주세요.</option>
-                  <option value="부재시 핸드폰으로 연락주세요.">부재시 핸드폰으로 연락주세요.</option>
                   <option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
                   <option value="부재시 집 앞에 놔주세요.">부재시 집 앞에 놔주세요.</option>
-                  <option value="부재시 집 앞에 놔주세요.">파손위험이 있는 상품이니 조심히 다뤄주세요.</option>
+                  <option value="택배함에 놔주세요.">택배함에 놔주세요.</option>
+                  <option value="파손위험이 있는 상품이니 조심히 다뤄주세요.">파손위험이 있는 상품이니 조심히 다뤄주세요.</option>
                   <option value="직접 입력">직접 입력</option>
                 </select>
                 {messageType === '직접 입력' && (
@@ -145,5 +142,7 @@ const NonMember = () => {
     </div>
   );
 };
+
+
 
 export default NonMember;
