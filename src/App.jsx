@@ -94,7 +94,7 @@ function App() {
       {/* <ThreeScene /> */}
       
      {/* 개발자페이지 */}
-     {/* <DeveloperPage /> */}
+     <DeveloperPage />
 
      {/* 별점 소수점으로 오름 */}
      {/* <StarRating /> */}

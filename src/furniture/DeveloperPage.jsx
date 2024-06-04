@@ -72,12 +72,12 @@ const App = () => {
   const [selectedCircle, setSelectedCircle] = useState(null); // 선택된 서클 상태를 관리하는 useState 훅
   const circles = [
     // id 1 이름 이강성 소감 나는 오늘힘들었다 이미지 이미지 1을 불러옴
-    { id: 1, name: '이강성 :', description: '나는 오늘 힘들었다', imgUrl: circle1Image }, //각 자 이미지와 간결한 한줄
-    { id: 2, name: '송햇님 :', description: '나는 집에 가고싶다.', imgUrl: circle2Image },
-    { id: 3, name: '정아름 :', description: '지구 망해라 ', imgUrl: circle3Image },
-    { id: 4, name: '박성민 :', description: 'This is the description for Circle ', imgUrl: circle4Image },
-    { id: 5, name: '홍시표 :', description: 'This is the description for Circle ', imgUrl: circle5Image },
-    { id: 6, name: '김용현 :', description: 'This is the description for Circle ', imgUrl: circle6Image },
+    { id: 1, name: '팀원 1 :', description: '나는 오늘 힘들었다', imgUrl: circle1Image }, //각 자 이미지와 간결한 한줄
+    { id: 2, name: '팀원 2 :', description: '나는 집에 가고싶다.', imgUrl: circle2Image },
+    { id: 3, name: '팀원 3 :', description: '지구 망해라 ', imgUrl: circle3Image },
+    { id: 4, name: '팀원 4 :', description: '집착하지마 ', imgUrl: circle4Image },
+    { id: 5, name: '팀원 5 :', description: '살려줘', imgUrl: circle5Image },
+    { id: 6, name: '팀원 6 :', description: '조기퇴근하고싶다 ', imgUrl: circle6Image },
   ]; // 서클 정보 배열입니다.
 
   const handleCircleClick = (id) => {
