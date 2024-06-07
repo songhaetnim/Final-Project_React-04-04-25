@@ -142,7 +142,4 @@ const NonMember = () => {
     </div>
   );
 };
-
-
-
 export default NonMember;
