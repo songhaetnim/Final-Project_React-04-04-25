@@ -27,6 +27,7 @@ import ShoppingIcon from './furniture/ShoppingIcon';
 import Calendar from './furniture/Calendar';
 import CalendarButton from './furniture/CalendarButton';
 import CalendarButtonin from './furniture/Calendarin';
+import Moomin from './CherryBlossom/Moomin';
 
 
 
@@ -94,7 +95,7 @@ function App() {
       {/* <ThreeScene /> */}
       
      {/* 개발자페이지 */}
-     <DeveloperPage />
+     {/* <DeveloperPage /> */}
 
      {/* 별점 소수점으로 오름 */}
      {/* <StarRating /> */}
@@ -108,6 +109,7 @@ function App() {
     {/* 캘린더보기버튼 */}
     {/* <CalendarButtonin /> */}
 
+    <Moomin />
 
 
 

@@ -1,49 +1,34 @@
-import React, { useState } from 'react'; // React와 useState 훅을 가져옵니다.
-import mainImage from './images/topimage.png'; // 메인 이미지를 가져옵니다.
-// import circle7Image from './images/topimage.png'; // 주석 처리된 서클 이미지입니다.
-import circle1Image from './images/circle01.png'; // 첫 번째 서클 이미지를 가져옵니다.
-import circle2Image from './images/circle02.png'; // 두 번째 서클 이미지를 가져옵니다.
-import circle3Image from './images/circle03.png'; // 세 번째 서클 이미지를 가져옵니다.
-import circle4Image from './images/circle04.png'; // 네 번째 서클 이미지를 가져옵니다.
-import circle5Image from './images/circle05.png'; // 다섯 번째 서클 이미지를 가져옵니다.
-import circle6Image from './images/circle06.png'; // 여섯 번째 서클 이미지를 가져옵니다.
-import { Typography } from '@mui/material'; // Material-UI의 Typography 컴포넌트를 가져옵니다.
-import { Stack } from 'react-bootstrap'; // react-bootstrap의 Stack 컴포넌트를 가져옵니다.
+import React, { useState } from 'react';
+import { Card, Typography } from '@mui/material';
 
 const Circle = ({ id, name, description, imgUrl, onClick }) => { 
-  // Circle 컴포넌트는 개별 서클을 나타내며 클릭 이벤트를 처리합니다.
-
-  // 서클의 기본 스타일
   const circleStyle = {
-    width: '100px', // 서클의 너비를 100px로 설정
-    height: '100px', // 서클의 높이를 100px로 설정
-    margin: '10px', // 서클 주위에 10px의 마진을 추가
-    borderRadius: '50%', // 서클 모양을 만들기 위해 반지름을 50%로 설정
-    overflow: 'hidden', // 넘치는 콘텐츠를 숨김
-    cursor: 'pointer', // 커서를 포인터로 변경
+    width: '100px',
+    height: '100px',
+    margin: '10px',
+    borderRadius: '50%',
+    overflow: 'hidden',
+    cursor: 'pointer',
   };
 
-  // 서클이 호버될 때 적용되는 스타일
   const hoverStyle = {
-    backgroundColor: '#d0d0d0', // 배경색을 연한 회색으로 변경
+    backgroundColor: '#d0d0d0',
   };
 
-  // 이미지 스타일
   const imgStyle = {
-    width: '100%', // 이미지 너비를 서클의 너비에 맞춤
-    height: '100%', // 이미지 높이를 서클의 높이에 맞춤
-    objectFit: 'cover', // 이미지 비율을 유지하며 서클에 맞게 조정
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   };
 
-  // 호버 상태를 관리하는 useState 훅
   const [hover, setHover] = useState(false);
 
   return (
     <div
-      style={hover ? { ...circleStyle, ...hoverStyle } : circleStyle} // 호버 상태에 따라 스타일을 적용
-      onClick={() => onClick(id)} // 클릭 시 onClick 핸들러를 호출
-      onMouseEnter={() => setHover(true)} // 마우스가 들어올 때 호버 상태로 변경
-      onMouseLeave={() => setHover(false)} // 마우스가 나갈 때 호버 상태 해제
+      style={hover ? { ...circleStyle, ...hoverStyle } : circleStyle}
+      onClick={() => onClick(id)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <img src={imgUrl} alt={name} style={imgStyle} /> 
       <p>{description}</p> 
@@ -51,77 +36,88 @@ const Circle = ({ id, name, description, imgUrl, onClick }) => {
   );
 };
 
-const Description = ({ description }) => {
-  // Description 컴포넌트는 선택된 서클의 설명을 표시합니다.
-
-  const descriptionStyle = {
-    marginTop: '20px', // 상단 마진을 20px로 설정
-    fontSize: '18px', // 글자 크기를 18px로 설정
-  };
-
-  return (
-    <div style={descriptionStyle}>
-      <p>{description}</p>
-    </div>
-  );
-};
-
-const App = () => {
-  // App 컴포넌트는 전체 애플리케이션을 관리합니다.
-
-  const [selectedCircle, setSelectedCircle] = useState(null); // 선택된 서클 상태를 관리하는 useState 훅
+const DeveloperPage = () => {
+  const [selectedCircle, setSelectedCircle] = useState(null);
   const circles = [
-    // id 1 이름 이강성 소감 나는 오늘힘들었다 이미지 이미지 1을 불러옴
-    { id: 1, name: '팀원 1 :', description: '나는 오늘 힘들었다', imgUrl: circle1Image }, //각 자 이미지와 간결한 한줄
-    { id: 2, name: '팀원 2 :', description: '나는 집에 가고싶다.', imgUrl: circle2Image },
-    { id: 3, name: '팀원 3 :', description: '지구 망해라 ', imgUrl: circle3Image },
-    { id: 4, name: '팀원 4 :', description: '집착하지마 ', imgUrl: circle4Image },
-    { id: 5, name: '팀원 5 :', description: '살려줘', imgUrl: circle5Image },
-    { id: 6, name: '팀원 6 :', description: '조기퇴근하고싶다 ', imgUrl: circle6Image },
-  ]; // 서클 정보 배열입니다.
+    { id: 1, 
+      name: '이강성 :', 
+      description: '상품, 리뷰, 문의의 기능과 결제(toss), 택배(DeliveryTracker), Karlo, cloudinary api, 통합, 배포',
+      oneLine: '기획할 때 API가 너무 많아 걱정이 되었습니다. 구현 실패한 API도 있었지만 API 사용방법을 공부하게 되어 좋은경험이었습니다.' , 
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle01.png` },
+    { id: 2, 
+      name: '송햇님', 
+      description: '택배(스마트택배) API, 주문내역캘린더, 문의, 비회원주문, 개발자페이지, 하트 토글',
+      oneLine: '스마트 택배 API를 사용하면서 무료 이용량의 제한이 불편했고, 그래서 다른 팀원이 찾은 API를' + 
+                '활용하여 문제를 해결했습니다. 모두가 새로운 API를 사용하면서 어려움을 겪었지만, 서로 도와가며' +
+                '작업을 해서 더 친해지고 언어공부도 할 수 있는 좋은 기회가 되었습니다.',
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle02.png`},
+    { id: 3, 
+      name: '정아름', 
+      description: '후기, 회원 주문, footer, ERD, 통계(상품 분석), 실시간 검색어', 
+      oneLine: 'React를 사용하면서 타 언어보다 효과적이게 작업 할 수 있다는 걸 알게 됐습니다. ' +
+                '이걸 계기로 리액트 공부에 더 집중할 수 있도록 하겠습니다. ' +
+                '그리고 검색 활용을 많이 해야 되는 걸 느꼈습니다. ' +
+                '코드 에러가 나면 무엇 때문인지 찾는 게 재밌고 전보다 많은 공부를 하게 됐습니다.',
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle03.png` },
+    { id: 4, 
+      name: '박성민', 
+      description:  '주문, Firebase를 이용한 유저, 소셜로그인 기능과 RealtimeDB, Karlo, CoolSMS api, 배포', 
+      oneLine: '개발 중 복잡한 문제를 쪼개어 해결한 후 통합하는 방식이 더 효율적임을 깨달았습니다. ' +
+                '또한 파이어베이스를 공부하며 새로운 기술을 빠르게 습득하는 역량과 검색 및 자료 활용 능력이 ' +
+                '개발자에게 중요하다는 것을 깨달았습니다.',
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle04.png` },
+    { id: 5, 
+      name: '홍시표', 
+      description: '최근 상품, 장바구니와 관리자 분석, 통계 페이지, Azure api', 
+      oneLine: 'react를 이용해서 웹을 띄우는게 처음으로 작업하는거라 코드 잡기가 어려웠습니다. ' +
+                '또한 back단에서 axios를 이용해서 데이터를 넘겨줄때도 많은 오류가 발생해서 어떤 오류가' +
+                '발생했고 왜 발생했는지 이유를 찾고 해결방안을 찾으면서 공부를 많이 한거같습니다. ',
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle05.png` },
+    { id: 6, 
+      name: '김용현', 
+      description: '디자인, 유저인터페이스, 페이지 데이터 출력 기능 연결', 
+      oneLine: '이른 퇴근은 건강에 이롭다',
+      imgUrl: `${process.env.PUBLIC_URL}/img/circle06.png` },
+  ];
 
   const handleCircleClick = (id) => {
-    // 서클 클릭 핸들러
-    setSelectedCircle(circles.find(circle => circle.id === id)); // 클릭된 서클을 상태로 설정
+    setSelectedCircle(circles.find(circle => circle.id === id));
   };
 
   const appStyle = {
-    flexDirection: 'column', // 세로 방향으로 정렬
-    alignItems: 'center', // 수직 중앙 정렬
-    textAlign: 'center', // 텍스트 중앙 정렬
-    padding: '20px', // 전체 패딩을 20px로 설정
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '20px',
   };
+
 
   return (
     <div style={appStyle}>
-      <Typography variant="h4">
-        Furniture
+      <img src={`${process.env.PUBLIC_URL}/img/topimage.png`} alt="Main" style={{ width: '50%', height: 'auto', objectFit: 'cover', margin: '20px auto' }} /> 
+      <Typography  variant="h5">
+      Furniture함께 만들어간 우리들의 소개
       </Typography>
-        <img src={mainImage} alt="Main" style={{ width: '50%', height: 'auto', objectFit: 'cover', margin: '20px auto' }} /> 
-      <Typography variant="h5">
-        Furniture 함께 만들어간 우리들의 소개
-      </Typography>
-       <div>
+      <div >
         {circles.map(circle => (
-          <div key={circle.id} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
-            <Circle 
-              id={circle.id} 
-              name={circle.name} 
-              description={circle.description} 
-              imgUrl={circle.imgUrl} 
-              onClick={handleCircleClick} 
-            />
-            <div>{circle.name}</div>
-            <div>{circle.description}</div>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
+            <Circle key={circle.id} id={circle.id} name={circle.name} description={circle.description} imgUrl={circle.imgUrl} onClick={handleCircleClick} />
+            <div style={{fontWeight:'bold'}}>{circle.name}</div>
+              <Card style={{padding: 5, textAlign:'left', width:'70%'}}>
+                <div>
+                  <span style={{fontWeight:'bold', fontSize: '0.9em'}}>담당: </span>
+                  <span style={{fontSize: '0.8em'}}>{circle.description}</span>
+                </div>
+                <div>
+                  <span style={{fontWeight:'bold', fontSize: '0.9em'}}>소감: </span>
+                  <span style={{fontSize: '0.8em'}}>{circle.oneLine}</span>
+                </div>
+              </Card>
           </div>
         ))}
       </div>
-      {selectedCircle && <Description description={selectedCircle.description} />}
     </div>
   );
 };
 
-export default App; // App 컴포넌트를 기본 익스포트합니다.
-
-
-
+export default DeveloperPage;
