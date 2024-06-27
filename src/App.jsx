@@ -27,7 +27,7 @@ import ShoppingIcon from './furniture/ShoppingIcon';
 import Calendar from './furniture/Calendar';
 import CalendarButton from './furniture/CalendarButton';
 import CalendarButtonin from './furniture/Calendarin';
-import Moomin from './CherryBlossom/Moomin';
+
 
 
 
@@ -109,7 +109,6 @@ function App() {
     {/* 캘린더보기버튼 */}
     {/* <CalendarButtonin /> */}
 
-    <Moomin />
 
 
 
